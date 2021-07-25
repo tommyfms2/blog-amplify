@@ -51,11 +51,27 @@ export const listPosts = /* GraphQL */ `
         postBody
         createdAt
         comments {
-          nextToken
+        items {
+          id
+          commentOwnerId
+          commentOwnerUsername
+          content
+          createdAt
+          updatedAt
         }
-        likes {
-          nextToken
+        nextToken
+      }
+      likes {
+        items {
+          id
+          numberLikes
+          likeOwnerId
+          likeOwnerUsername
+          createdAt
+          updatedAt
         }
+        nextToken
+      }
         updatedAt
       }
       nextToken
